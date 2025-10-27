@@ -3,12 +3,9 @@ runtime: python311
 build:
   commands:
     build:
-      - echo "Build phase - minimal operations only"
+      - pip3 install --no-cache-dir -r requirements.txt
 run:
-  runtime-version: 3.11
   command: python3 server.py
   network:
     port: 8000
-  env:
-    - name: PORT
-      value: "8000"
+  runtime-version: python3.11
